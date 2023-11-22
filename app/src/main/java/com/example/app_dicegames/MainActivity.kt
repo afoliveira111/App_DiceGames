@@ -38,6 +38,8 @@ fun App() {
 @Composable
 fun GreetingPreview() {
     App_DiceGamesTheme {
-       App()
+        Surface(modifier = Modifier.fillMaxSize()) {
+            App()
+        }
     }
 }
