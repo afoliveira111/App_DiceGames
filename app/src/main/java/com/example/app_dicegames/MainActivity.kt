@@ -3,10 +3,12 @@ package com.example.app_dicegames
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -42,17 +44,19 @@ fun App() {
         .fillMaxSize()
         .background(Color.Black)
     ) {
+
+        Canvas(modifier = Modifier.size(96.dp, 96.dp)){
+
+        }
+
         Button(onClick = { }, modifier = Modifier
             .align(Alignment.Center)
             .offset(y = (100).dp)
         ){
-
             Text("Jogar")
 
         }
-
     }
-
 }
 
 @Preview(showBackground = true)
