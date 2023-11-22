@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxScopeInstance.align
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
@@ -17,6 +16,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.EmptyBuildDrawCacheParams.size
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
@@ -42,9 +42,10 @@ class MainActivity : ComponentActivity() {
     }
 }
 @Composable
-fun Dice(modifier: Modifier){
-Canvas(modifier = Modifier
-    .size(96.dp, 96.dp)
+fun Dice(number: Int, modifier: Modifier){
+Canvas(
+    modifier = Modifier
+         .size(96.dp, 96.dp)
     ) {
         drawRoundRect(
             Color.Green,
@@ -53,11 +54,26 @@ Canvas(modifier = Modifier
             size = size
         )
 
+        if(number == 1)
         drawCircle(
             Color.Black,
             radius = Dp(20f).value
             center = Offset(size.width / 2, size.height / 2)
         )
+    } else if (number == 2) {
+        drawCircle(
+            Color.Black,
+            radius = Dp(20f).value
+            center = Offset(size.width - Dp(40f).value, Dp(40f).value)
+        )
+
+        drawCircle(
+            Color.Black,
+            radius = Dp(20f).value
+            center = Offset(0f, size.height
+        )
+        )
+
     }
 
 }
@@ -70,7 +86,8 @@ fun App() {
             .background(Color.Black)
     ) {
 
-        Dice()
+        Dice(1, Modifier.align(Alignment.Center))
+        Dice(2, Modifier.align(Alignment.TopStart))
 
         Button(onClick = { }, modifier = Modifier
             .align(Alignment.Center)
