@@ -20,6 +20,7 @@ import androidx.compose.ui.draw.EmptyBuildDrawCacheParams.size
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
@@ -41,6 +42,18 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+fun DrawScope.bullet(number: Int) {
+    when(number) {
+        1 -> {
+
+        }
+        2 -> {
+
+        }
+    }
+}
+
 @Composable
 fun Dice(number: Int, modifier: Modifier){
 Canvas(
@@ -64,15 +77,15 @@ Canvas(
         drawCircle(
             Color.Black,
             radius = Dp(20f).value
-            center = Offset(size.width - Dp(40f).value, Dp(40f).value)
+            center = Offset(size.width - Dp(20f).value, Dp(40f).value)
         )
 
         drawCircle(
             Color.Black,
             radius = Dp(20f).value
-            center = Offset(0f, size.height
+            center = Offset(Dp(40f).value, size.height - Dp(20f).value)
         )
-        )
+
 
     }
 
