@@ -37,7 +37,10 @@ fun App() {
     Box(modifier = Modifier
         .fillMaxSize()
         .background(Color.Black)
-    )
+    ) {
+        Text("Ola", modifier = Modifier.background(Color.White))
+         Text("Mundo", modifier = Modifier.background(Color.Blue))
+    }
 
 }
 
