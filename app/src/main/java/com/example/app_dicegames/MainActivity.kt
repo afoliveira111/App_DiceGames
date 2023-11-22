@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxScopeInstance.align
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
@@ -40,33 +41,41 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+@Composable
+fun Dice(modifier: Modifier){
+Canvas(modifier = Modifier
+    .size(96.dp, 96.dp)
+    ) {
+        drawRoundRect(
+            Color.Green,
+            cornerRadius = CornerRadius(20f, 20f)
+            topLeft = Offset(10f, 10f),
+            size = size
+        )
+
+        drawCircle(
+            Color.Black,
+            radius = Dp(20f).value
+            center = Offset(size.width / 2, size.height / 2)
+        )
+    }
+
+}
 
 @Composable
 fun App() {
-    Box(modifier = Modifier
-        .fillMaxSize()
-        .background(Color.Black)
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.Black)
     ) {
 
-        Canvas(modifier = Modifier.size(96.dp, 96.dp)) {
-            drawRoundRect(
-                Color.Green,
-                cornerRadius = CornerRadius(20f, 20f)
-                topLeft = Offset(10f, 10f),
-                size = size
-             )
-
-            drawCircle(
-                Color.Black,
-                radius = Dp(20f).value
-                center = Offset(size.width / 2, size.height / 2)
-            )
-        }
+        Dice()
 
         Button(onClick = { }, modifier = Modifier
             .align(Alignment.Center)
             .offset(y = (100).dp)
-        ){
+        ) {
             Text("Jogar")
 
         }
