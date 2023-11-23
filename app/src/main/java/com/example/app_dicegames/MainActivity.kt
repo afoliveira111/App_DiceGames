@@ -36,12 +36,12 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-fun DrawScope.circle(offset: () -> Offset) {
+fun DrawScope.circle(offset: (Float) -> Offset) {
     val radius = Dp(20f).value
     drawCircle(
         Color.Black,
         radius = radius,
-        center = offset()
+        center = offset(radius)
     )
 }
 
