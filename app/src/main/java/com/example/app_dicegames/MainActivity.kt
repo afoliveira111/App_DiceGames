@@ -52,7 +52,7 @@ fun DrawScope.center(){
 }
 fun DrawScope.topRight(){
     circle {
-        Offset(size.width -Dp(20f).value, Dp(20f).value)
+        Offset(size.width - Dp(20f).value, Dp(40f).value)
     }
 }
 
@@ -63,6 +63,7 @@ fun DrawScope.bullet(number: Int) {
         }
         2 -> {
             topRight()
+            center()
         }
     }
 }
