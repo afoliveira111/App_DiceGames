@@ -69,6 +69,7 @@ fun DrawScope.bullet(number: Int) {
         2 -> {
             topRight()
             center()
+            bottonLeft()
         }
     }
 }
