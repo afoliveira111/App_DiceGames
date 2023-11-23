@@ -50,9 +50,14 @@ fun DrawScope.center(){
         Offset(size.width / 2, size.height / 2)
     }
 }
-fun DrawScope.topRight(){
+fun DrawScope.topRight() {
     circle {
-        Offset(size.width - Dp(20f).value, Dp(40f).value)
+        Offset(size.width - it, it * 2)
+    }
+}
+fun DrawScope.bottonLeft() {
+    circle {
+        Offset(it * 2f, size.height - (it * 2f))
     }
 }
 
