@@ -5,18 +5,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.offset
-import androidx.compose.foundation.layout.size
-import androidx.compose.material3.Button
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.foundation.layout.*
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.EmptyBuildDrawCacheParams.size
 import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
@@ -55,40 +48,39 @@ fun DrawScope.bullet(number: Int) {
 }
 
 @Composable
-fun Dice(number: Int, modifier: Modifier){
+fun Dice(number: Int, modifier: Modifier) {
 Canvas(
     modifier = Modifier
          .size(96.dp, 96.dp)
     ) {
-        drawRoundRect(
-            Color.Green,
-            cornerRadius = CornerRadius(20f, 20f)
-            topLeft = Offset(10f, 10f),
-            size = size
-        )
+    drawRoundRect(
+        color = Color.Green,
+        size = size,
+        cornerRadius = CornerRadius(20f, 20f),
+        topLeft = Offset(10f, 10f)
+    )
 
-        if(number == 1)
+    if (number == 1) {
         drawCircle(
-            Color.Black,
-            radius = Dp(20f).value
+            color = Color.Black,
+            radius = Dp(20f).value,
             center = Offset(size.width / 2, size.height / 2)
         )
     } else if (number == 2) {
         drawCircle(
-            Color.Black,
-            radius = Dp(20f).value
+            color = Color.Black,
+            radius = Dp(20f).value,
             center = Offset(size.width - Dp(20f).value, Dp(40f).value)
         )
 
         drawCircle(
-            Color.Black,
-            radius = Dp(20f).value
-            center = Offset(Dp(40f).value, size.height - Dp(20f).value)
+            color = Color.Black,
+            radius = Dp(20f).value,
+            center = Offset(Dp(40f).value, size.width - Dp(20f).value)
+
         )
-
-
-    }
-
+      }
+   }
 }
 
 @Composable
@@ -111,13 +103,18 @@ fun App() {
         }
     }
 }
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    App_DiceGamesTheme {
-        Surface(modifier = Modifier.fillMaxSize()) {
-            App()
+    @Preview(showBackground = true)
+    @Composable
+    fun GreetingPreview() {
+        App_DiceGamesTheme {
+            Surface(modifier = Modifier.fillMaxSize()) {
+                App()
+            }
         }
     }
-}
+
+
+
+
+
+
