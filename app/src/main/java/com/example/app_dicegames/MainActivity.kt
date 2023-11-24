@@ -75,9 +75,9 @@ fun DrawScope.bullet(number: Int) {
 
 @Composable
 fun Dice(number: Int, modifier: Modifier) {
-Canvas(
-    modifier = Modifier
-         .size(96.dp, 96.dp)
+    Canvas(
+         modifier = modifier
+          .size(96.dp, 96.dp)
     ) {
     drawRoundRect(
         color = Color.Green,
