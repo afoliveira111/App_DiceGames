@@ -90,6 +90,9 @@ fun DrawScope.bullet(number: Int) {
             bottomRight()
             bottomLeft()
         }
+        5 -> {
+
+        }
     }
 }
 
