@@ -55,6 +55,11 @@ fun DrawScope.topRight() {
         Offset(size.width - it, it * 2)
     }
 }
+fun DrawScope.topLeft() {
+    circle {
+        Offset(it * 2f, it * 2f)
+    }
+
 fun DrawScope.bottonLeft() {
     circle {
         Offset(it * 2f, size.height - it)
