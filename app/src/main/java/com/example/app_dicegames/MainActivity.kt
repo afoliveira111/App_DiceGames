@@ -45,7 +45,7 @@ fun DrawScope.circle(offset: (Float) -> Offset) {
     )
 }
 
-fun DrawScope.center(){
+fun DrawScope.center() {
     circle {
         Offset((size.width / 2f) + (it / 2f), (size.height / 2f) + (it / 2f))
     }
@@ -55,22 +55,21 @@ fun DrawScope.topRight() {
         Offset(size.width - it, it * 2)
     }
 }
-fun DrawScope.topRight() {
+fun DrawScope.topLeft() {
     circle {
         Offset(it * 2f, it * 2f)
     }
 }
-fun DrawScope.bottonLeft() {
+fun DrawScope.bottomLeft() {
     circle {
         Offset(it * 2f, size.height - it)
     }
 }
-fun DrawScope.bottonRight() {
+fun DrawScope.bottomRight() {
         circle {
-            Offset(it * 2f, size.height - it)
-        }
-    }
-
+         Offset(size.width - it,size.height - it)
+     }
+}
 fun DrawScope.bullet(number: Int) {
     when(number) {
         1 -> {
@@ -78,18 +77,18 @@ fun DrawScope.bullet(number: Int) {
         }
         2 -> {
             topRight()
-            bottonLeft()
+            bottomLeft()
         }
         3 -> {
             center()
             topRight()
-            bottonLeft()
+            bottomLeft()
         }
         4 -> {
             topRight()
             topLeft()
-            bottonRight()
-            bottonLeft()
+            bottomRight()
+            bottomLeft()
         }
     }
 }
