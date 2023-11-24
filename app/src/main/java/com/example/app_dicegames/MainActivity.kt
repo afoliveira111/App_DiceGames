@@ -70,6 +70,17 @@ fun DrawScope.bottomRight() {
          Offset(size.width - it,size.height - it)
      }
 }
+fun DrawScope.centerLeft() {
+    circle {
+        Offset(it * 2f, (size.height / 2f) + (it / 2f))
+    }
+}
+fun DrawScope.centerRight() {
+    circle {
+        Offset(size.width - it , (size.height / 2f) + (it / 2f))
+    }
+}
+
 fun DrawScope.bullet(number: Int) {
     when(number) {
         1 -> {
@@ -97,6 +108,14 @@ fun DrawScope.bullet(number: Int) {
             bottomRight()
             bottomLeft()
 
+        }
+        6 -> {
+            topRight()
+            topLeft()
+            centerRight()
+            centerLeft()
+            bottomRight()
+            bottomLeft()
         }
     }
 }
@@ -126,7 +145,7 @@ fun App() {
             .background(Color.Black)
     ) {
 
-        Dice(5, Modifier.align(Alignment.Center))
+        Dice(6, Modifier.align(Alignment.Center))
 
         Button(onClick = { }, modifier = Modifier
             .align(Alignment.Center)
