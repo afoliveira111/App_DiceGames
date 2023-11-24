@@ -139,15 +139,18 @@ fun Dice(number: Int, modifier: Modifier) {
 
 @Composable
 fun App() {
+    var r by remember { mutableStateOf(3)   }
     Box(
         modifier = Modifier
             .fillMaxSize()
             .background(Color.Black)
     ) {
 
-        Dice(6, Modifier.align(Alignment.Center))
+        Dice(r, Modifier.align(Alignment.Center))
 
-        Button(onClick = { }, modifier = Modifier
+        Button(onClick = {
+
+        }, modifier = Modifier
             .align(Alignment.Center)
             .offset(y = (100).dp)
         ) {
