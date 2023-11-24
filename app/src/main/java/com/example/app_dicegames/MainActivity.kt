@@ -91,6 +91,11 @@ fun DrawScope.bullet(number: Int) {
             bottomLeft()
         }
         5 -> {
+            center()
+            topRight()
+            topLeft()
+            bottomRight()
+            bottomLeft()
 
         }
     }
@@ -121,7 +126,7 @@ fun App() {
             .background(Color.Black)
     ) {
 
-        Dice(4, Modifier.align(Alignment.Center))
+        Dice(5, Modifier.align(Alignment.Center))
 
         Button(onClick = { }, modifier = Modifier
             .align(Alignment.Center)
