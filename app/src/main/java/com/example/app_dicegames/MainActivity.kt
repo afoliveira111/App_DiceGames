@@ -70,6 +70,17 @@ fun DrawScope.bullet(number: Int) {
             topRight()
             bottonLeft()
         }
+        3 -> {
+            center()
+            topRight()
+            bottonLeft()
+        }
+        4 -> {
+            topRight()
+            topLeft()
+            bottonRight()
+            bottonLeft()
+        }
     }
 }
 
@@ -98,8 +109,7 @@ fun App() {
             .background(Color.Black)
     ) {
 
-        Dice(1, Modifier.align(Alignment.Center))
-        Dice(2, Modifier.align(Alignment.TopStart))
+        Dice(3, Modifier.align(Alignment.Center))
 
         Button(onClick = { }, modifier = Modifier
             .align(Alignment.Center)
