@@ -139,7 +139,11 @@ fun Dice(number: Int, modifier: Modifier) {
 
 @Composable
 fun App() {
-    var r by remember { mutableStateOf(3)   }
+    var r by remember { mutableStateOf(3)  }
+    var timer by remember { mutableStateOf(0)   }
+
+    LaunchedEffect(key1 = , block = )
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -149,7 +153,7 @@ fun App() {
         Dice(r, Modifier.align(Alignment.Center))
 
         Button(onClick = {
-
+                r = 6
         }, modifier = Modifier
             .align(Alignment.Center)
             .offset(y = (100).dp)
