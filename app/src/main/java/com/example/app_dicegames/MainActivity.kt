@@ -47,7 +47,7 @@ fun DrawScope.circle(offset: (Float) -> Offset) {
 
 fun DrawScope.center(){
     circle {
-        Offset(size.width / 2, size.height / 2)
+        Offset((size.width / 2f) + (it / 2f), (size.height / 2f) + (it / 2f))
     }
 }
 fun DrawScope.topRight() {
