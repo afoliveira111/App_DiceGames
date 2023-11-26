@@ -18,6 +18,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.app_dicegames.ui.theme.App_DiceGamesTheme
+import kotlinx.coroutines.delay
+import java.util.Random
+import androidx.compose.runtime.Composable
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -142,7 +145,13 @@ fun App() {
     var r by remember { mutableStateOf(3)  }
     var timer by remember { mutableStateOf(0)   }
 
-    LaunchedEffect(key1 = , block = )
+    LaunchedEffect(key1 = timer) {
+        if (timer > 0) {
+            delay((500 * (1.0f / timer)).toLong())
+            r = kotlin.random.Random.nextInt(1, 7)
+            timer -= 1
+        }
+    }
 
     Box(
         modifier = Modifier
@@ -153,13 +162,16 @@ fun App() {
         Dice(r, Modifier.align(Alignment.Center))
 
         Button(onClick = {
-                r = 6
+                timer = 60
         }, modifier = Modifier
             .align(Alignment.Center)
             .offset(y = (100).dp)
         ) {
-            Text("Jogar")
-
+            if (timer > 0) {
+                 Text(text = "$timer")
+            }else {
+                Text("Jogar")
+            }
         }
     }
 }
