@@ -26,7 +26,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             App_DiceGamesTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -164,7 +163,7 @@ fun App() {
                 timer = 60
         }, modifier = Modifier
             .align(Alignment.Center)
-            .offset(y = (100).dp)
+            .offset(y = (120).dp)
         ) {
             if (timer > 0) {
                  Text(text = "$timer")
