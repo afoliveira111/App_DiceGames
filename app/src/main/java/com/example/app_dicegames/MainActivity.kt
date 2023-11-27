@@ -154,7 +154,7 @@ fun App() {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Black)
+            .background(Color.DarkGray)
     ) {
 
         Dice(r, Modifier.align(Alignment.Center))
