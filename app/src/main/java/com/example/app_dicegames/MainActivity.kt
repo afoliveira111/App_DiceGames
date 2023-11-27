@@ -19,7 +19,6 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.example.app_dicegames.ui.theme.App_DiceGamesTheme
 import kotlinx.coroutines.delay
-import java.util.Random
 import androidx.compose.runtime.Composable
 
 class MainActivity : ComponentActivity() {
@@ -130,7 +129,7 @@ fun Dice(number: Int, modifier: Modifier) {
           .size(96.dp, 96.dp)
     ) {
     drawRoundRect(
-        color = Color.Green,
+        color = Color.White,
         size = size,
         cornerRadius = CornerRadius(20f, 20f),
         topLeft = Offset(10f, 10f)
