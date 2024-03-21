@@ -125,13 +125,14 @@ fun DrawScope.bullet(number: Int) {
 fun Dice(number: Int, modifier: Modifier) {
     Canvas(
          modifier = modifier
-          .size(96.dp, 96.dp)
+          .size(118.dp, 118.dp)
     ) {
     drawRoundRect(
         color = Color.White,
         size = size,
         cornerRadius = CornerRadius(20f, 20f),
         topLeft = Offset(10f, 10f)
+
     )
 
         bullet(number = number)
@@ -154,13 +155,13 @@ fun App() {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.DarkGray)
+            .background(Color.Black)
     ) {
 
         Dice(r, Modifier.align(Alignment.Center))
 
         Button(onClick = {
-                timer = 60
+                timer = 10
         }, modifier = Modifier
             .align(Alignment.Center)
             .offset(y = (120).dp)
